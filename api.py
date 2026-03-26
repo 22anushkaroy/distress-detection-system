@@ -23,7 +23,14 @@ app.add_middleware(
 
 # Load your model globally
 model = DistressModel()
-model.train('data/train', 'data/my_sensor_data')
+model_path = 'model.pkl'
+
+if not model.load(model_path):
+    # If no saved model exists, train it and save it
+    print("No saved model found. Training now...")
+    model.train('data/train', 'data/my_sensor_data')
+    model.save(model_path)
+    
 voice_trigger = VoiceTrigger()
 
 class SensorRequest(BaseModel):

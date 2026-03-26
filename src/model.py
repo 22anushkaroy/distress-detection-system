@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import os
+import joblib
 
 class DistressModel:
     def __init__(self):
@@ -327,6 +328,19 @@ class DistressModel:
         print("=" * 60)
 
         return self.model
+        
+    def save(self, filepath):
+        """Save the trained model to disk"""
+        joblib.dump(self.model, filepath)
+        print(f"💾 Model saved to {filepath}")
+        
+    def load(self, filepath):
+        """Load a trained model from disk"""
+        if os.path.exists(filepath):
+            self.model = joblib.load(filepath)
+            print(f"✅ Loaded trained model from {filepath}")
+            return True
+        return False
 
     def predict(self, features):
         """Predict class and confidence from features"""
