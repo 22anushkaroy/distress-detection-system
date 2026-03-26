@@ -1,0 +1,4 @@
+# Target Sample Rate: 100 Hz
+# Max Device Sample Rate: 100 Hz
+# Recording started at: 2026-03-25 00:51:11.992
+time,ax (m/s^2),ay (m/s^2),az (m/s^2),aT (m/s^2)

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distress Detection System — Be Smart, Be Safe</title>
+    <meta name="description"
+        content="Digital safety and distress detection system for students. Detect distress through sensors, text messages, and voice analysis.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========= NAVBAR ========= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                🛡️ <span>SafeGuard</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#sensor-card" class="nav-link">Sensor</a></li>
+                <li><a href="#text-card" class="nav-link">Text</a></li>
+                <li><a href="#voice-card" class="nav-link">Voice</a></li>
+            </ul>
+            <a href="#sensor-card" class="nav-cta">Get Started</a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"
+                aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- ========= HERO SECTION ========= -->
+    <section class="hero">
+        <!-- Floating Decorations -->
+        <span class="deco deco-1">🕐</span>
+        <span class="deco deco-2">📞</span>
+        <span class="deco deco-3">🛡️</span>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    Digital Safety
+                    <span>For Students</span>
+                </h1>
+                <div class="tagline">🔒 Be Smart, Be Safe Online</div>
+            </div>
+            <div class="hero-image">
+                <img src="hero-image.png" alt="Digital Safety Illustration - Students learning about online safety">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= MAIN CONTENT ========= -->
+    <div class="main-container">
+        <h2 class="section-title">Distress Detection Tools</h2>
+
+        <!-- SENSOR DETECTION -->
+        <section class="card" id="sensor-card">
+            <div class="card-header">
+                <div class="card-icon sensor">📱</div>
+                <h2>Sensor Detection <small>Simulate movement patterns to detect distress</small></h2>
+            </div>
+            <div class="input-group">
+                <label for="sensor-activity">Select Activity:</label>
+                <select id="sensor-activity">
+                    <option value="Normal Walking">🚶 Normal Walking</option>
+                    <option value="Fall">⬇️ Fall</option>
+                    <option value="Panic Running">🏃 Panic Running</option>
+                    <option value="Struggling">💪 Struggling</option>
+                    <option value="Freeze">🧊 Freeze</option>
+                </select>
+            </div>
+            <button onclick="detectSensor()" class="btn-primary">⚡ Simulate & Detect</button>
+            <div id="sensor-result" class="result-container hidden"></div>
+        </section>
+
+        <!-- TEXT DETECTION -->
+        <section class="card" id="text-card">
+            <div class="card-header">
+                <div class="card-icon text">💬</div>
+                <h2>Text Detection <small>Analyze messages for distress keywords</small></h2>
+            </div>
+            <div class="input-group">
+                <label for="text-input">Enter Message:</label>
+                <textarea id="text-input" placeholder="e.g., Please help me someone..." rows="3"></textarea>
+            </div>
+            <button onclick="checkText()" class="btn-primary">🔍 Check Text</button>
+            <div id="text-result" class="result-container hidden"></div>
+        </section>
+
+        <!-- VOICE DETECTION -->
+        <section class="card" id="voice-card">
+            <div class="card-header">
+                <div class="card-icon voice">🎤</div>
+                <h2>Voice Detection <small>Upload audio to detect distress in speech</small></h2>
+            </div>
+            <div class="input-group">
+                <label for="voice-file">Upload Audio (.wav only):</label>
+                <input type="file" id="voice-file" accept=".wav">
+            </div>
+            <button onclick="analyzeVoice()" class="btn-primary">🎧 Analyze Voice</button>
+            <div id="voice-result" class="result-container hidden"></div>
+        </section>
+    </div>
+
+    <!-- ========= FOOTER ========= -->
+    <footer class="footer">
+        <div class="tips">
+            <div class="tip-item">🛡️ Stay Protected</div>
+
+            <div class="tip-item">📵 Report Suspicious Activity</div>
+            <div class="tip-item">👥 Stay Connected</div>
+        </div>
+
+        <p>Distress Detection System &copy; 2026 — Keeping Students Safe</p>
+    </footer>
+
+    <!-- UI Logic and API Calls -->
+    <script src="script.js"></script>
+</body>
+
+</html>
