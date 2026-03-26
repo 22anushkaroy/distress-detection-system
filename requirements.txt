@@ -1,15 +1,10 @@
-# FastAPI and Server
-fastapi==0.115.0
-uvicorn==0.31.0
-pydantic==2.9.2
-python-multipart==0.0.12
-
-# Machine Learning and Data
-numpy
-pandas
+fastapi==0.103.2
+pydantic==1.10.13
+uvicorn
 scikit-learn
-
-# Audio and Speech
+pandas
+numpy
+joblib
+python-multipart
 SpeechRecognition
-PyAudio
 pydub
